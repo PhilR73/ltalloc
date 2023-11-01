@@ -56,4 +56,12 @@ struct allocator {
         p->~T();
     }
 };
+
+template<class T> bool operator==(const allocator<T>&, const allocator<T>&) {
+    return true;
+}
+
+template <class T> bool operator!=(const allocator<T>&, const allocator<T>&) {
+    return false;
+}
 }
